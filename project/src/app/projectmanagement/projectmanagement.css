@@ -1,0 +1,23 @@
+
+fieldset{
+text-align: center;
+top: -308px;
+position: relative;
+height: 182px;
+width: 400px;
+background: aquamarine;
+left: 33%;
+color: white;
+}
+
+th{
+background: chartreuse;
+}
+
+.header{
+font-size:28px;
+}
+
+table{
+background: blanchedalmond;
+}

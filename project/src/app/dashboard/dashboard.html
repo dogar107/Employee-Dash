@@ -1,0 +1,97 @@
+<app-header></app-header>
+
+<div class="dashboard-container">
+  <div class="welcome-section">
+    <h1>Welcome back, Admin</h1>
+    <p>Here's what's happening with your employees and projects today.</p>
+  </div>
+
+  <div class="stats-grid">
+    <mat-card class="stats-card employees">
+      <mat-card-header>
+        <div mat-card-avatar class="icon-container">
+          <mat-icon>people</mat-icon>
+        </div>
+        <mat-card-title>Total Employees</mat-card-title>
+        <mat-card-subtitle>Active workforce</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="count-display">
+          <span class="count">{{employeecount}}</span>
+          <span class="trend positive">+2%</span>
+        </div>
+        <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stats-card projects">
+      <mat-card-header>
+        <div mat-card-avatar class="icon-container">
+          <mat-icon>assessment</mat-icon>
+        </div>
+        <mat-card-title>Total Projects</mat-card-title>
+        <mat-card-subtitle>Ongoing initiatives</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="count-display">
+          <span class="count">{{totalproject}}</span>
+          <span class="trend neutral">0%</span>
+        </div>
+        <mat-progress-bar mode="determinate" value="45"></mat-progress-bar>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stats-card status">
+      <mat-card-header>
+        <div mat-card-avatar class="icon-container">
+          <mat-icon>assignment_turned_in</mat-icon>
+        </div>
+        <mat-card-title>Tasks per Status</mat-card-title>
+        <mat-card-subtitle>Current progress</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="status-list">
+          <div *ngFor="let p of posts" class="status-item">
+            <span class="status-label">{{ p.status }}</span>
+            <span class="status-value">Active</span>
+          </div>
+          <div *ngIf="posts.length === 0" class="empty-state">
+            No active tasks found
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stats-card projects-tasks">
+      <mat-card-header>
+        <div mat-card-avatar class="icon-container">
+          <mat-icon>folder</mat-icon>
+        </div>
+        <mat-card-title>Tasks per Projects</mat-card-title>
+        <mat-card-subtitle>Resource allocation</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="project-list">
+          <div *ngFor="let p of posts" class="project-item">
+            <span class="project-name">{{ p.name }}</span>
+            <div class="project-mini-bar"></div>
+          </div>
+          <div *ngIf="posts.length === 0" class="empty-state">
+            No projects assigned
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="bottom-sections">
+    <mat-card class="info-card">
+      <mat-card-header>
+        <mat-card-title>Upcoming Deadlines</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="muted">No upcoming deadlines for this week.</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

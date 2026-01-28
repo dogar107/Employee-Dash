@@ -1,0 +1,47 @@
+nav{
+padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            display:flex;
+            justify-content: center;
+            background: beige;
+}
+
+h1{
+    float: left;
+    top: 1%;
+    position: absolute;
+    left: 1%;
+    font-size:26px;
+    font-style:italic;
+}
+
+ul{
+list-style: none;
+    gap: 43px;
+    display: flex;
+}
+
+li{
+text-decoration: none;
+}
+
+a{
+text-decoration: none;
+color:black;
+}
+
+.circle{
+  height: 31px;
+  width: 31px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+    left: 25%;
+    top: 9px;
+}
+
+mat-icon{
+color:white;
+}
